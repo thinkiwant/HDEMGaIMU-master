@@ -1,5 +1,5 @@
 # coding:UTF-8
-import serial, os, re, string
+import serial, os, re
 
 class IMU():
     def __init__(self, filename = 'imu', imuPort = 'null'):

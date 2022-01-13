@@ -4,8 +4,7 @@ import sys, time, imuThread
 from PyQt5.Qt import *
 from PyQt5 import QtWidgets, uic,QtGui
 from PyQt5.QtCore import *
-import pyqtgraph as pg
-import numpy as np
+
 
 import PythonSocketServer
 from PythonSocketServer import SocketServer
@@ -115,7 +114,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.sckServer.setAcceptDevices([id])
                 self.sckServer.startVisualizing()
                 emgPlotter.VisualOn = True
-                self.WinD = emgPlotter.emgPlotter()
+                self.WinD = emgPlotter.emgPlotter(self.app)
                 self.WinD.start()
                 self.pushButton_5.setText('Stop displaying')
                 self.btn5Status = 1

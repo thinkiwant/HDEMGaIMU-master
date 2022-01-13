@@ -12,7 +12,7 @@ import pyqtgraph as pg
 from pyqtgraph.Qt import QtCore, QtGui
 
 emgReadSign = True
-ConvFact = 4.8 / 65536*1000
+ConvFact = 4.8 / 65536
 
 class SocketServer():
 
@@ -129,7 +129,7 @@ class SocketServer():
                     self.clientList.append(c)
                     if state == 1:
                         fileNameCode = self.fileName.encode()
-                        timeStamp = self.getTimeStampBytes()
+                        #timeStamp = self.getTimeStampBytes()
                         cmd = cmdB + self.time + fileNameCode + ModleSig
                     else:
                         cmd = cmdB
